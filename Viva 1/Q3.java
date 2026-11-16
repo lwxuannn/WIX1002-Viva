@@ -18,16 +18,6 @@ public class Q3
                 //Ask user to enter account number
                 System.out.print("Enter account number (or EXIT to stop): ");
                 String acc = sc.nextLine();
-
-                //Check whether user wants to stop the program
-                if (acc.equalsIgnoreCase("EXIT"))
-                {
-                    //Display final bill statistics
-                    System.out.println("Bills Processed: " + processed);
-                    System.out.printf("Total Amount Billed: RM %.2f%n", totalAmount);
-                    System.out.printf("Highest Bill: RM %.2f (%s)%n", highestBill, highestAcc); 
-                    break;
-                }
                 
                 //Remove spaces and hyphens, then convert to uppercase
                 acc = acc.replaceAll("[- ]", "").toUpperCase();
@@ -206,6 +196,16 @@ public class Q3
                     {
                         highestBill = total;
                         highestAcc = acc;
+                    }
+                    
+                    //Check whether user wants to stop the program
+                    if (acc.equalsIgnoreCase("EXIT"))
+                    {
+                        //Display final bill statistics
+                        System.out.println("Bills Processed: " + processed);
+                        System.out.printf("Total Amount Billed: RM %.2f%n", totalAmount);
+                        System.out.printf("Highest Bill: RM %.2f (%s)%n", highestBill, highestAcc); 
+                        break;
                     }       
                 }
             }
